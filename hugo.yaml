@@ -1,0 +1,97 @@
+baseURL: "https://DumpA1n.github.io/"
+locale: "zh-cn"
+defaultContentLanguage: "zh-cn"
+title: "DumpA1n 的技术笔记"
+theme: "PaperMod"
+
+# 分页
+pagination:
+  pagerSize: 10
+
+# 生成 robots.txt
+enableRobotsTXT: true
+
+# 中文分词/摘要更准
+hasCJKLanguage: true
+summaryLength: 100
+
+# 代码高亮
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
+    codeFences: true
+    guessSyntax: true
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true  # 允许 markdown 内嵌 HTML(插图/表格等)
+
+# 生成 RSS / sitemap
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # 供站内搜索使用
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  description: "游戏安全 / 逆向 / ARM64 / Hook 技术笔记"
+  author: "DumpA1n"
+  defaultTheme: auto        # auto | light | dark
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowToc: true
+  TocOpen: false
+  comments: false
+
+  homeInfoParams:
+    Title: "👋 这里是技术笔记"
+    Content: >
+      记录逆向工程、ARM64、Hook、游戏安全相关的踩坑与思考。
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/DumpA1n"
+    - name: rss
+      url: "index.xml"
+
+  # 站内搜索(Fuse.js)所需字段
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# 导航菜单
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 20
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 30
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 40
